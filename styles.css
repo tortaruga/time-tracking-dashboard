@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --blue: hsl(246, 80%, 60%);
+    --work: hsl(15, 100%, 70%);
+    --play: hsl(195, 74%, 62%);
+    --study: hsl(348, 100%, 68%);
+    --exercise: hsl(145, 58%, 55%);
+    --social: hsl(264, 64%, 52%);
+    --self-care: hsl(43, 84%, 65%);
+    ---very-dark-blue: hsl(226, 43%, 10%);
+    --dark-blue: hsl(235, 46%, 20%);
+    --desaturated-blue: hsl(235, 45%, 61%);
+    --pale-blue: hsl(236, 100%, 87%);
+} 
+
+* {
+    box-sizing: border-box;
+}
+
+*::after, *::before {
+    content: '';
+    position: absolute;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    justify-content: center;
+}
+
+.grid {
+    display: grid;
+    background-color: yellow;
+    width: clamp(18rem, 90%, 50rem);
+}
+
+.card {
+    padding: 2rem;
+}
+
+.user-card {
+    background: var(--desaturated-blue);
+    border-radius: 1rem;
+    box-shadow: inset 0px -5rem var(---very-dark-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.user-info img {
+    width: 3.5rem;
+    border: 2px solid white;
+    border-radius: 50%;   
+}
+
+.user-info p {
+    margin: 0;
+}
+
+.choose-stats {
+    display: flex;
+    color: aliceblue;
+    background-color: aqua;
+    justify-content: space-between;
+}
