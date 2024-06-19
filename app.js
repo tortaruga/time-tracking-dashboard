@@ -1,4 +1,8 @@
-import data from './data.json' assert { type: 'json' };
+// import data from './data.json' assert { type: 'json' };
+
+fetch('./data.json')
+.then((response) => response.json())
+.then((json) => console.log(json))
 
 const currentStats = document.querySelectorAll('.current');
 const previousStats = document.querySelectorAll('.previous');

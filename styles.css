@@ -41,8 +41,9 @@ main {
 
 .grid {
     display: grid;
-    width: clamp(18rem, 90%, 50rem);
-    gap: 3.5rem;
+    width: clamp(18rem, 90%, 75rem);
+    gap: 4rem 1.5rem;
+    justify-content: center;
 }
 
 .card {
@@ -178,7 +179,7 @@ footer {
 
 @media screen and (min-width: 500px) {
     .grid {
-        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+        grid-template-columns: repeat(auto-fill,  16rem);
     }
 
     .user-card {
@@ -200,7 +201,7 @@ footer {
     #username {
         font-size: 2.5rem;
     }
-    
+
     .choose-stats p{
         margin-block: .6rem;
     }
