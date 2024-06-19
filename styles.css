@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
-    --blue: hsl(246, 80%, 60%);
+    --blue: hsl(247, 14%, 50%);
     --work: hsl(15, 100%, 70%);
     --play: hsl(195, 74%, 62%);
     --study: hsl(348, 100%, 68%);
@@ -53,8 +53,12 @@ main {
     position: relative;
 }
 
+.card:hover {
+    background: var();
+    cursor: pointer;
+}
+
 .user-card {
-    /* background: var(--desaturated-blue); */
     border-radius: 1rem;
     box-shadow: inset 0px -4.5rem var(--dark-blue);
     display: flex;
@@ -66,7 +70,7 @@ main {
 }
 
 .user-card:before {
-    background: var(--desaturated-blue);
+    background: var(--blue);
     inset: 0;
     border-radius: inherit;
     z-index: -1;
@@ -78,7 +82,7 @@ main {
     display: flex;
     align-items: center;
     gap: 2rem;
-    margin-top: -2rem;
+    margin-top: -2rem; 
 }
 
 .user-info img {
@@ -101,8 +105,17 @@ main {
 }
 .choose-stats {
     display: flex;
-    /* background-color: aqua; */
+    color: var(--pale-blue);
     justify-content: space-between;
+}
+
+.choose-stats p:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+.selected {
+    color: #fff;
 }
 
 .category {

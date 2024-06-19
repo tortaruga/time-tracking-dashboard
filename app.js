@@ -1,17 +1,22 @@
 // import data from './data.json' assert { type: 'json' };
 
-fetch('./data.json')
-.then((response) => response.json())
-.then((json) => console.log(json))
-
 const currentStats = document.querySelectorAll('.current');
 const previousStats = document.querySelectorAll('.previous');
+const dailyBtn = document.getElementById('daily');
+const weeklyBtn = document.getElementById('weekly');
+const monthlyBtn = document.getElementById('monthly');
 
-// curr = [p , p, p ,,p ]
-// data[i].timeframes.current.weekly 
- 
 
-function displayWeeklyStats() {
+fetch('/data.json').then((request) => {  
+    if(!request.ok) {
+      return null;
+    }
+    
+    return request.json();
+  }).then((data) => {
+   console.log(data);
+   
+       function displayWeeklyStats() {
     for (let i = 0; i < currentStats.length; i++) {
         currentStats[i].textContent = data[i].timeframes.weekly.current + 'hrs';
     }
@@ -22,9 +27,7 @@ function displayWeeklyStats() {
            
 }
 
-displayWeeklyStats();
-
-function displayDailyStats() {
+    function displayDailyStats() {
 
     for (let i = 0; i < currentStats.length; i++) {
         currentStats[i].textContent = data[i].timeframes.daily.current + 'hrs';
@@ -36,7 +39,7 @@ function displayDailyStats() {
 
 }
 
-function displayMonthlyStats() {
+    function displayMonthlyStats() {
     for (let i = 0; i < currentStats.length; i++) {
         currentStats[i].textContent = data[i].timeframes.monthly.current + 'hrs';
     }
@@ -46,10 +49,26 @@ function displayMonthlyStats() {
     }
 }
 
-const dailyBtn = document.getElementById('daily');
-const monthlyBtn = document.getElementById('monthly');
-const weeklyBtn = document.getElementById('weekly');
+displayWeeklyStats();
 
-dailyBtn.addEventListener('click', displayDailyStats);
-monthlyBtn.addEventListener('click', displayMonthlyStats);
-weeklyBtn.addEventListener('click', displayWeeklyStats);
+   dailyBtn.addEventListener('click', () => {
+    displayDailyStats();
+    dailyBtn.classList.toggle('selected');
+    weeklyBtn.classList.remove('selected');
+    monthlyBtn.classList.remove('selected');
+   });
+   monthlyBtn.addEventListener('click', () => {
+    displayMonthlyStats();
+    dailyBtn.classList.remove('selected');
+    weeklyBtn.classList.remove('selected');
+    monthlyBtn.classList.toggle('selected');
+   });
+   weeklyBtn.addEventListener('click', () => {
+    displayWeeklyStats();
+    dailyBtn.classList.remove('selected');
+    weeklyBtn.classList.toggle('selected');
+    monthlyBtn.classList.remove('selected');
+   });
+
+});
+
