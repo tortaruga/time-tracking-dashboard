@@ -3,12 +3,49 @@ import data from './data.json' assert { type: 'json' };
 const currentStats = document.querySelectorAll('.current');
 const previousStats = document.querySelectorAll('.previous');
 
-for (let i = 0; i < data.length; i++) {
-    currentStats.forEach(stat => {
-        stat.textContent = data[i].timeframes.weekly.current
-    })
+// curr = [p , p, p ,,p ]
+// data[i].timeframes.current.weekly 
+ 
+
+function displayWeeklyStats() {
+    for (let i = 0; i < currentStats.length; i++) {
+        currentStats[i].textContent = data[i].timeframes.weekly.current + 'hrs';
+    }
+
+    for (let i = 0; i < previousStats.length; i++) {
+        previousStats[i].textContent = 'Last Week - ' + data[i].timeframes.weekly.previous + 'hrs';
+    }
+           
 }
 
-console.log(45)
+displayWeeklyStats();
 
-document.getElementById('work').innerHTML = data[1].timeframes.weekly.current
+function displayDailyStats() {
+
+    for (let i = 0; i < currentStats.length; i++) {
+        currentStats[i].textContent = data[i].timeframes.daily.current + 'hrs';
+    }
+
+    for (let i = 0; i < previousStats.length; i++) {
+        previousStats[i].textContent = 'Yesterday - ' + data[i].timeframes.daily.previous + 'hrs';
+    }
+
+}
+
+function displayMonthlyStats() {
+    for (let i = 0; i < currentStats.length; i++) {
+        currentStats[i].textContent = data[i].timeframes.monthly.current + 'hrs';
+    }
+
+    for (let i = 0; i < previousStats.length; i++) {
+        previousStats[i].textContent = 'Last Month - ' + data[i].timeframes.monthly.previous + 'hrs';
+    }
+}
+
+const dailyBtn = document.getElementById('daily');
+const monthlyBtn = document.getElementById('monthly');
+const weeklyBtn = document.getElementById('weekly');
+
+dailyBtn.addEventListener('click', displayDailyStats);
+monthlyBtn.addEventListener('click', displayMonthlyStats);
+weeklyBtn.addEventListener('click', displayWeeklyStats);
