@@ -28,12 +28,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./images/Screenshot%202024-06-20%20at%2015-14-56%20Frontend%20Mentor%20Time%20tracking%20dashboard.png)
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/time-tracking-dashboard-with-grids-E_muFmftB3](https://www.frontendmentor.io/solutions/time-tracking-dashboard-with-grids-E_muFmftB3)
 - Live Site URL: [https://tortaruga.github.io/time-tracking-dashboard/](https://tortaruga.github.io/time-tracking-dashboard/)
 
 ## My process

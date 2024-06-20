@@ -7,7 +7,7 @@ const weeklyBtn = document.getElementById('weekly');
 const monthlyBtn = document.getElementById('monthly');
 
 
-fetch('./data.json').then((request) => {  
+fetch('https://tortaruga.github.io/time-tracking-dashboard/data.json').then((request) => {  
     if(!request.ok) {
       return null;
     }
