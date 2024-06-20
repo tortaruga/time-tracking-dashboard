@@ -7,7 +7,7 @@ const weeklyBtn = document.getElementById('weekly');
 const monthlyBtn = document.getElementById('monthly');
 
 
-fetch('/data.json').then((request) => {  
+fetch('./data.json').then((request) => {  
     if(!request.ok) {
       return null;
     }
@@ -19,6 +19,7 @@ fetch('/data.json').then((request) => {
        function displayWeeklyStats() {
     for (let i = 0; i < currentStats.length; i++) {
         currentStats[i].textContent = data[i].timeframes.weekly.current + 'hrs';
+        console.log(data)
     }
 
     for (let i = 0; i < previousStats.length; i++) {
