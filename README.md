@@ -1,99 +1,88 @@
-# Frontend Mentor - Time tracking dashboard
+# Frontend Mentor - Time tracking dashboard solution
 
-![Design preview for the Time tracking dashboard coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+I've wanted to alternatively throw myself or the computer out the window, I prayed to the gods of development to give me one (just one!) straight-forward answer, to have one thing make sense—no matter how small, no matter how useless!—I found myself blabbering JS gibberish in my sleep, dancing crazed-eyed in the moonlight scaring my cats—but it works. The project works. How? Beats the hell of me. But it works.
 
-## The challenge
+### The challenge
 
-Your challenge is to build out this dashboard and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-If you would like to practice working with JSON data, we provide a local `data.json` file for the activities. This means you'll be able to pull the data from there instead of using the content in the `.html` file.
-
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout for the site depending on their device's screen size
 - See hover states for all interactive elements on the page
 - Switch between viewing Daily, Weekly, and Monthly stats
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+### Screenshot
 
-### Expected behaviour
+![](./screenshot.jpg)
 
-- The text for the previous period's time should change based on the active timeframe. For Daily, it should read "Yesterday" e.g "Yesterday - 2hrs". For Weekly, it should read "Last Week" e.g. "Last Week - 32hrs". For monthly, it should read "Last Month" e.g. "Last Month - 19hrs".
 
-## Where to find everything
+### Links
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design.
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`.
+## My process
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+Honestly I just plunged into this one without rhyme nor reason (which might explain why it took me almost four days). I kept going from html to css to js to the design files to the church to ask for guidance. I think the devil tried to lead me astray multiple times whispering very seducing ideas in my ears—like smash this laptop with a hammer and let fetch and APIs and JSON and asynchronous functions blow up in glory and just go to sleep and hopefully don't ever wake up.
+Note for self: for the love of everything that is sacred please organize your work better (or, like, AT ALL) next time. 
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+### Built with
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+- HTML5 
+- CSS 
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- JS 
+- Amount of patience significantly larger than the one I possess
 
-## Building your project
+### What I learned
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+Boy. Where do I begin.
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+- I learned a few new things about selectors, like .card:not(:first-child) to select all cards but the user one, and img[src="./images/icon-ellipsis.svg"] to select all the images of the ellipsis icon.
 
-## Deploying your project
+- I had a LOT of trouble trying to get that damned hover effect on the three dots icon without triggering the hover effect for the .card element. I tried everything I could with CSS and :hover, but I had to admit my defeat and deal with it with JS. 
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+- I then had a LOT of trouble getting that damned hover effect to work on JS as well... And apparently mouseover needs a mouseout event listener to handle when you hover away or the style applied just stays there in perpetuity. 
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+- e.target.tagName !== 'IMG' is NOT the same as !e.target.tagName === 'IMG'. I wasted WAY too much time to figure it out. It makes sense: !e.target.tagName gets evaluated first and then compared to 'IMG', which is not at all what I wanted to happen, but for some reason my brain refused to understand it for well over half an hour.
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+- I was about to say something about JSON and everything related, but let's be honest: I didn't learn a single thing. I understood absolutely nothing. I'm not even sure why this code finally works. My brain is a foggy swamp where meaningless words like 'AJAX', 'fetch', and 'await'  roam purposelessly like tiny frogs.
 
-## Create a custom `README.md`
+- I had used this tiny, gorgeous line:
+```
+import data from './data.json' assert { type: 'json' };
+```
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+Everything worked smoothly. Until I opened the project on a browser. Then my hopes and dreams got cruelly shattered. 
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+So I tried using fetch, and the first issue here is that I understood virtually nothing of the whole syntax but we'll worry about that later, and the rest of the issues were that no matter what I did I could not access the data! So it turned out I can only access it from inside the fetch function. Technically my research told me there are ways to access it outside, but I must be doing something wrong because I could not get that to work. 
+So what did we learn? We learned that importing .json files is spectacular but useless on both chrome and firefox, that fetch is a mysterious thing that lets me access the .json file but only if I move all my code inside, and that there's something called an anynchronous function, with a whole plethora of new concepts like await, response, .then, and at this point I just want to sleep and I'm strating to get verbose so I'll just end it here.
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+### Continued development
 
-## Submitting your solution
+ I always use the same very basic selectors and I think I could do interesting things (or even do the same things faster) if I learned more about it.
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+ I need to understand this whole JSON business. Just thinking about it makes me want to cry. 
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+## Author
 
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback.
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+- Frontend Mentor - [@tortaruga](https://www.frontendmentor.io/profile/tortaruga)

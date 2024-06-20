@@ -41,7 +41,7 @@ main {
 
 .grid {
     display: grid;
-    width: clamp(18rem, 90%, 75rem);
+    width: clamp(18.5rem, 90%, 70rem);
     gap: 4rem 1.5rem;
     justify-content: center;
 }
@@ -53,8 +53,7 @@ main {
     position: relative;
 }
 
-.card:hover {
-    background: var();
+.card:not(:first-child) {
     cursor: pointer;
 }
 
@@ -70,7 +69,7 @@ main {
 }
 
 .user-card:before {
-    background: var(--blue);
+    background: var(--desaturated-blue);
     inset: 0;
     border-radius: inherit;
     z-index: -1;
@@ -123,7 +122,18 @@ main {
     align-items: center;
     justify-content: space-between;
     font-weight: 500;
-    /* font-size: 1.2rem; */
+}
+
+img[src="./images/icon-ellipsis.svg"] {
+    cursor: pointer;
+}
+
+.card-hover-state {
+    background: var(--blue);
+}
+
+.img-hover-state {
+    filter: brightness(1.5);
 }
 
 .stats {
@@ -139,6 +149,7 @@ main {
 
 .previous {
     color: var(--pale-blue);
+    text-align: right;
 }
 
 #work {
@@ -187,10 +198,13 @@ main {
 
 footer {
     padding: 2rem;
-
 }
 
-@media screen and (min-width: 500px) {
+.attribution a {
+    color: var(--play);
+}
+
+@media screen and (min-width: 45.5rem) {
     .grid {
         grid-template-columns: repeat(auto-fill,  16rem);
     }

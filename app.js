@@ -72,3 +72,30 @@ displayWeeklyStats();
 
 });
 
+const ellipsisIcons = document.querySelectorAll('img[src="./images/icon-ellipsis.svg"]');
+const cards = document.querySelectorAll('.card:not(:first-child)');
+
+
+cards.forEach(card => {
+    card.addEventListener('mouseover', (e) => {
+       if (e.target.tagName !== 'IMG') {
+        card.classList.add('card-hover-state');
+       }
+    })
+    card.addEventListener('mouseout', () => {
+        card.classList.remove('card-hover-state'); 
+    })
+})
+
+ellipsisIcons.forEach(icon => { 
+     icon.addEventListener('mouseover', () => {
+     icon.classList.add('img-hover-state');
+     cards.forEach(card => {
+     card.classList.remove('card-hover-state'); 
+     })   
+     })
+     icon.addEventListener('mouseout', () => {
+        icon.classList.remove('img-hover-state');   
+     })
+})
+
